@@ -91,6 +91,7 @@ function run() {
     },
   });
 
+  // Task lOptions
   const tasks = {
     core: createTask({
       name: `Core, Dll & Examples ${chalk.gray('(core)')}`,
@@ -182,17 +183,20 @@ function run() {
     }),
   };
 
+  // Groups
+
   const groups = {
     main: ['core', 'docs'],
     buildtasks: ['install', 'build', 'dll', 'packs'],
     devtasks: ['dev', 'registry', 'reset'],
   };
-
   Object.keys(tasks)
     .reduce((acc, key) => acc.option(tasks[key].option, tasks[key].name), main)
     .parse(process.argv);
+  // console.log(tasks)
 
   Object.keys(tasks).forEach(key => {
+    // console.log(key)
     tasks[key].value = program[tasks[key].option.replace('--', '')] || program.all;
   });
 
