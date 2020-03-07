@@ -10,8 +10,8 @@ const logger = console;
 let cooldown = 0;
 
 try {
-  require('inquirer');
-  require('commander');
+  require('inquirer'); // command line interface for Node.js
+  require('commander'); // The complete solution for node.js command-line interfaces
   require('chalk');
   require('npmlog');
 } catch (e) {
@@ -29,10 +29,10 @@ try {
 }
 
 function run() {
-  const inquirer = require('inquirer');
-  const program = require('commander');
-  const chalk = require('chalk');
-  const log = require('npmlog');
+  const inquirer = require('inquirer'); // command line interface for Node.js
+  const program = require('commander'); // The complete solution for node.js command-line interfaces
+  const chalk = require('chalk'); // styling cli
+  const log = require('npmlog'); // The logger util that npm uses.
 
   const isTgz = source => lstatSync(source).isFile() && source.match(/.tgz$/);
   const getDirectories = source =>
