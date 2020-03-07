@@ -12,8 +12,8 @@ let cooldown = 0;
 try {
   require('inquirer'); // command line interface for Node.js
   require('commander'); // The complete solution for node.js command-line interfaces
-  require('chalk');
-  require('npmlog');
+  require('chalk'); // styling cli
+  require('npmlog'); // The logger util that npm uses.
 } catch (e) {
   logger.log('🕘 running bootstrap on a clean repo, we have to install dependencies');
   childProcess.spawnSync('yarn', ['install', '--ignore-optional'], {
